@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubud Backyard | Serene Sanctuary in Ubud Bali</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        warmIvory: '#F9F6F0',
+                        accentGold: '#C5A880',
+                        darkCharcoal: '#2C2C2C',
+                        softSage: '#6B7A68',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9F6F0;
+            color: #2C2C2C;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            position: absolute;
+            inset: 0;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-warmIvory text-darkCharcoal antialiased selection:bg-accentGold selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-[#b89768] text-white shadow-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl md:text-3xl tracking-wide font-bold text-white uppercase">Ubud Backyard</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wider uppercase">
+                <a href="#tentang" class="hover:text-[#332515] transition" data-i18n="nav_about">Tentang</a>
+                <a href="#kamar" class="hover:text-[#332515] transition" data-i18n="nav_rooms">Kamar & Harga</a>
+                <a href="#fasilitas" class="hover:text-[#332515] transition" data-i18n="nav_facilities">Fasilitas</a>
+                <a href="#rating" class="hover:text-[#332515] transition" data-i18n="nav_rating">Rating</a>
+                <a href="#galeri" class="hover:text-[#332515] transition" data-i18n="nav_gallery">Galeri</a>
+            </nav>
+
+            <!-- CTA & Language Switcher -->
+            <div class="hidden md:flex items-center gap-4">
+                <div class="flex items-center bg-white/10 rounded-full p-1 border border-white/20 text-xs font-semibold">
+                    <button onclick="setLanguage('en')" id="lang-en-btn" class="px-3 py-1.5 rounded-full transition bg-white text-[#b89768]">EN</button>
+                    <button onclick="setLanguage('id')" id="lang-id-btn" class="px-3 py-1.5 rounded-full transition text-white hover:text-[#332515]">IN</button>
+                </div>
+                <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="bg-[#9d7e52] hover:bg-[#836742] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest transition shadow-sm" data-i18n="cta_booking">
+                    Pesan di Booking.com
+                </a>
+            </div>
+
+            <!-- Mobile Menu & Lang Button -->
+            <div class="flex items-center gap-3 md:hidden">
+                <div class="flex items-center bg-white/10 rounded-full p-0.5 border border-white/20 text-[10px] font-semibold">
+                    <button onclick="setLanguage('en')" id="lang-en-m-btn" class="px-2 py-1 rounded-full transition bg-white text-[#b89768]">EN</button>
+                    <button onclick="setLanguage('id')" id="lang-id-m-btn" class="px-2 py-1 rounded-full transition text-white">IN</button>
+                </div>
+                <button id="menu-btn" class="text-2xl text-white focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#b89768] border-t border-white/10 px-6 py-4 space-y-4 text-sm font-medium uppercase tracking-wider">
+            <a href="#tentang" class="block hover:text-[#332515] transition" data-i18n="nav_about">Tentang</a>
+            <a href="#kamar" class="block hover:text-[#332515] transition" data-i18n="nav_rooms">Kamar & Harga</a>
+            <a href="#fasilitas" class="block hover:text-[#332515] transition" data-i18n="nav_facilities">Fasilitas</a>
+            <a href="#rating" class="block hover:text-[#332515] transition" data-i18n="nav_rating">Rating</a>
+            <a href="#galeri" class="block hover:text-[#332515] transition" data-i18n="nav_gallery">Galeri</a>
+            <div class="pt-2">
+                <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="block text-center bg-[#9d7e52] text-white px-6 py-3 rounded-full text-xs font-semibold tracking-widest" data-i18n="cta_booking">
+                    Pesan di Booking.com
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="hero-slide active">
+            <img src="asset/hero1.jpg" alt="Ubud Backyard Suite" class="w-full h-full object-cover brightness-[0.65]">
+        </div>
+        <div class="hero-slide">
+            <img src="asset/hero2.jpg" alt="Ubud Backyard Garden" class="w-full h-full object-cover brightness-[0.65]">
+        </div>
+        <div class="hero-slide">
+            <img src="asset/hero3.jpg" alt="Ubud Backyard Balcony" class="w-full h-full object-cover brightness-[0.65]">
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-darkCharcoal/70 via-transparent to-black/20 pointer-events-none"></div>
+
+        <div class="relative z-10 text-center text-warmIvory max-w-4xl mx-auto px-6 mt-12">
+            <span class="inline-block uppercase tracking-[0.3em] text-xs font-semibold bg-accentGold/80 text-white px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm" data-i18n="hero_badge">
+                Luxury Sanctuary in Ubud
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-wide mb-6 leading-tight" data-i18n="hero_title">
+                Your Peaceful Retreat <br><span class="italic font-normal">in the Heart of Bali</span>
+            </h1>
+            <p class="text-base md:text-lg font-light text-warmIvory/90 max-w-2xl mx-auto mb-10 tracking-wide" data-i18n="hero_desc">
+                Menyatu dengan ketenangan alam Ubud di Gg. Soka. Menghadirkan kemudahan akses, kenyamanan paripurna, dan keasrian tropis yang autentik.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#kamar" class="w-full sm:w-auto bg-accentGold hover:bg-[#b0936d] text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest transition shadow-lg" data-i18n="hero_btn_rooms">
+                    Lihat Pilihan Kamar
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 z-20 flex gap-2">
+            <button class="w-3 h-3 rounded-full bg-white/50 transition duration-300 indicator active" onclick="currentSlide(0)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 transition duration-300 indicator" onclick="currentSlide(1)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 transition duration-300 indicator" onclick="currentSlide(2)"></button>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-accentGold mb-3 block" data-i18n="about_tag">Tentang Properti</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-darkCharcoal mb-6 leading-tight" data-i18n="about_title">
+                    Ketenangan Eksklusif di Jantung Ubud
+                </h2>
+                <p class="text-gray-600 font-light leading-relaxed mb-6" data-i18n="about_desc">
+                    Terletak tersembunyi namun strategis di Gang Soka No.5, <strong>Ubud Backyard</strong> menawarkan pengalaman menginap yang menggabungkan kehangatan nuansa tradisional Bali dengan fasilitas modern kelas atas. Dikelilingi kehijauan yang menyegarkan, properti ini adalah tempat peristirahatan sempurna setelah seharian menjelajahi keindahan Monkey Forest dan Pasar Ubud.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-accentGold/20">
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-accentGold mb-1" data-i18n="about_stat1_num">12 Menit</h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider" data-i18n="about_stat1">Jalan Kaki ke Monkey Forest</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-accentGold mb-1" data-i18n="about_stat2_num">8 Menit</h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider" data-i18n="about_stat2">Ke Pasar Tradisional Ubud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <img src="asset/hero1.jpg" alt="Ubud Backyard Interior" class="rounded-2xl shadow-md object-cover h-64 w-full">
+                    <img src="asset/hero3.jpg" alt="Ubud Backyard Detail" class="rounded-2xl shadow-md object-cover h-48 w-full">
+                </div>
+                <div class="space-y-4 pt-8">
+                    <img src="asset/hero4.jpg" alt="Ubud Backyard Room" class="rounded-2xl shadow-md object-cover h-48 w-full">
+                    <img src="asset/hero2.jpg" alt="Ubud Backyard Outdoor" class="rounded-2xl shadow-md object-cover h-64 w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kamar & Harga -->
+    <section id="kamar" class="py-24 bg-white px-6 border-y border-accentGold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-accentGold mb-3 block" data-i18n="rooms_tag">Akomodasi Pilihan</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-darkCharcoal mb-4" data-i18n="rooms_title">
+                    Kamar & Suite Mewah
+                </h2>
+                <p class="text-gray-600 font-light text-sm" data-i18n="rooms_desc">
+                    Dirancang dengan estetika simpel elegan, memberikan kenyamanan maksimal selama Anda berlibur di Bali.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Tipe Kamar 1 -->
+                <div class="bg-warmIvory rounded-3xl overflow-hidden border border-accentGold/20 shadow-sm hover:shadow-md transition group">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="asset/hero3.jpg" alt="Deluxe King Room" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-darkCharcoal text-warmIvory text-xs px-3 py-1.5 rounded-full font-medium tracking-wider" data-i18n="room1_badge">
+                            Deluxe King Room
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold text-darkCharcoal mb-3" data-i18n="room1_title">Deluxe King Room with Balcony</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6" data-i18n="room1_desc">
+                            Kamar luas berukuran 25 m² dengan tempat tidur ukuran King yang mewah, balkon pribadi menghadap ke hamparan taman hijau, kamar mandi modern, serta fasilitas lengkap.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 text-xs text-darkCharcoal/80 mb-8 pb-6 border-b border-accentGold/20 font-medium">
+                            <div><i class="fa-solid fa-wifi text-accentGold mr-2"></i> <span data-i18n="amenity_wifi">Wi-Fi Gratis di Kamar</span></div>
+                            <div><i class="fa-solid fa-mug-hot text-accentGold mr-2"></i> <span data-i18n="amenity_coffee">Teh & Kopi Gratis</span></div>
+                            <div><i class="fa-solid fa-snowflake text-accentGold mr-2"></i> <span data-i18n="amenity_ac">AC (Air Conditioning)</span></div>
+                            <div><i class="fa-solid fa-bath text-accentGold mr-2"></i> <span data-i18n="amenity_bath">Kamar Mandi Pribadi</span></div>
+                            <div><i class="fa-solid fa-mountain-sun text-accentGold mr-2"></i> <span data-i18n="amenity_balcony">Balkon Pemandangan Taman</span></div>
+                            <div><i class="fa-solid fa-shirt text-accentGold mr-2"></i> <span data-i18n="amenity_wardrobe">Lemari Pakaian</span></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] text-gray-400 uppercase tracking-wider block" data-i18n="start_from">Mulai Dari</span>
+                                <span class="text-xl font-bold text-darkCharcoal">Rp 200.000</span> <span class="text-xs text-gray-500" data-i18n="per_night">/malam</span>
+                            </div>
+                            <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="bg-accentGold hover:bg-[#b0936d] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest transition" data-i18n="btn_book">
+                                Pesan Kamar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tipe Kamar 2 -->
+                <div class="bg-warmIvory rounded-3xl overflow-hidden border border-accentGold/20 shadow-sm hover:shadow-md transition group">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="asset/hero1.jpg" alt="Double Room with Terrace" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-darkCharcoal text-warmIvory text-xs px-3 py-1.5 rounded-full font-medium tracking-wider" data-i18n="room2_badge">
+                            Double Room with Terrace
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold text-darkCharcoal mb-3" data-i18n="room2_title">Double Room with Terrace</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6" data-i18n="room2_desc">
+                            Kamar cozy berukuran 25 m² yang dilengkapi teras pribadi langsung menghadap ke kebun asri. Sempurna untuk bersantai menikmati pagi hari di Ubud sambil menyeruput kopi hangat.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 text-xs text-darkCharcoal/80 mb-8 pb-6 border-b border-accentGold/20 font-medium">
+                            <div><i class="fa-solid fa-wifi text-accentGold mr-2"></i> <span data-i18n="amenity_wifi">Wi-Fi Gratis di Kamar</span></div>
+                            <div><i class="fa-solid fa-mug-hot text-accentGold mr-2"></i> <span data-i18n="amenity_coffee">Teh & Kopi Gratis</span></div>
+                            <div><i class="fa-solid fa-snowflake text-accentGold mr-2"></i> <span data-i18n="amenity_ac">AC (Air Conditioning)</span></div>
+                            <div><i class="fa-solid fa-bath text-accentGold mr-2"></i> <span data-i18n="amenity_bath">Kamar Mandi Pribadi</span></div>
+                            <div><i class="fa-solid fa-chair text-accentGold mr-2"></i> <span data-i18n="amenity_terrace">Teras Pribadi & Kursi Santai</span></div>
+                            <div><i class="fa-solid fa-shirt text-accentGold mr-2"></i> <span data-i18n="amenity_wardrobe">Lemari Pakaian</span></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] text-gray-400 uppercase tracking-wider block" data-i18n="start_from">Mulai Dari</span>
+                                <span class="text-xl font-bold text-darkCharcoal">Rp 250.000</span> <span class="text-xs text-gray-500" data-i18n="per_night">/malam</span>
+                            </div>
+                            <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="bg-accentGold hover:bg-[#b0936d] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest transition" data-i18n="btn_book">
+                                Pesan Kamar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Unggulan -->
+    <section id="fasilitas" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-semibold tracking-[0.25em] uppercase text-accentGold mb-3 block" data-i18n="fac_tag">Kenyamanan Tamu</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-darkCharcoal mb-4" data-i18n="fac_title">
+                Fasilitas Premium
+            </h2>
+            <p class="text-gray-600 font-light text-sm" data-i18n="fac_desc">
+                Segala hal yang Anda butuhkan untuk memastikan pengalaman menginap yang tenang dan menyenangkan.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-accentGold/20 shadow-sm text-center hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-warmIvory rounded-full flex items-center justify-center mx-auto mb-6 text-accentGold text-2xl">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-darkCharcoal mb-2" data-i18n="fac1_title">Wi-Fi Cepat Gratis</h4>
+                <p class="text-xs text-gray-500 font-light leading-relaxed" data-i18n="fac1_desc">Akses internet nirkabel berkecepatan tinggi gratis di seluruh area kamar dan properti.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-accentGold/20 shadow-sm text-center hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-warmIvory rounded-full flex items-center justify-center mx-auto mb-6 text-accentGold text-2xl">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-darkCharcoal mb-2" data-i18n="fac2_title">Teh & Kopi Gratis</h4>
+                <p class="text-xs text-gray-500 font-light leading-relaxed" data-i18n="fac2_desc">Fasilitas pembuat teh dan kopi siap pakai di setiap kamar untuk menemani waktu santai Anda.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-accentGold/20 shadow-sm text-center hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-warmIvory rounded-full flex items-center justify-center mx-auto mb-6 text-accentGold text-2xl">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-darkCharcoal mb-2" data-i18n="fac3_title">Taman Asri & Tenang</h4>
+                <p class="text-xs text-gray-500 font-light leading-relaxed" data-i18n="fac3_desc">Area taman hijau tropis yang menyejukkan pandangan dan memberikan ketenangan jiwa.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-accentGold/20 shadow-sm text-center hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-warmIvory rounded-full flex items-center justify-center mx-auto mb-6 text-accentGold text-2xl">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-darkCharcoal mb-2" data-i18n="fac4_title">Kamar Ber-AC</h4>
+                <p class="text-xs text-gray-500 font-light leading-relaxed" data-i18n="fac4_desc">Pendingin ruangan berkualitas untuk memastikan kesejukan optimal setelah beraktivitas di luar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rating Section -->
+    <section id="rating" class="py-24 bg-white px-6 border-t border-accentGold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-accentGold mb-3 block" data-i18n="rating_tag">Ulasan Tamu</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-darkCharcoal mb-4" data-i18n="rating_title">
+                    Rating & Kepuasan Tamu
+                </h2>
+                <p class="text-gray-600 font-light text-sm" data-i18n="rating_desc">
+                    Penilaian luar biasa dan pengalaman nyata dari para pelancong yang telah menginap di Ubud Backyard.
+                </p>
+            </div>
+
+            <div class="flex justify-center mb-16">
+                <div class="bg-warmIvory p-8 md:p-10 rounded-3xl border border-accentGold/20 text-center max-w-md w-full shadow-sm">
+                    <div class="inline-block bg-[#b89768] text-white font-bold text-4xl px-6 py-3 rounded-2xl mb-4 shadow-sm">
+                        8.9 <span class="text-sm font-normal">/10</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-darkCharcoal mb-1" data-i18n="score_title">Luar Biasa</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-wider mb-3" data-i18n="score_subtitle">Berdasarkan 49 Ulasan Nyata di Booking.com</p>
+                    <div class="flex justify-center gap-1 text-amber-500 text-sm mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="inline-block bg-accentGold hover:bg-[#b0936d] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest transition shadow-sm" data-i18n="read_all_reviews">
+                        Lihat Semua Ulasan di Booking.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-serif text-xl font-bold text-darkCharcoal" data-i18n="reviews_slider_title">Pengalaman Langsung Tamu Kami</h3>
+                    <div class="flex gap-2">
+                        <button onclick="slideReviews(-1)" class="w-10 h-10 rounded-full bg-[#b89768] text-white flex items-center justify-center hover:bg-[#9d7e52] transition shadow-sm focus:outline-none">
+                            <i class="fa-solid fa-chevron-left text-sm"></i>
+                        </button>
+                        <button onclick="slideReviews(1)" class="w-10 h-10 rounded-full bg-[#b89768] text-white flex items-center justify-center hover:bg-[#9d7e52] transition shadow-sm focus:outline-none">
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="reviewSlider" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 pt-1 no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Ulasan 1 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">GG</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Germán Gutiérrez</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Amazing place, environment, rooms, breakfast, and so on, afterwards. Really felt immersed in the tranquil atmosphere of Ubud while staying in such a comfortable sanctuary."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 2 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">VP</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Valeriia Petrenko</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"We were especially impressed with the fantastic service by host. They went above and beyond to make sure our stay was pleasant, helping us arrange local tours seamlessly."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 3 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">WS</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Walid Serir</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Great place, friendly staff, The breakfast was tasty, located in city center. Super convenient for walking around Ubud Palace and local markets without needing a transport all the time."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 4 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">SB</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Swarna Bhattacharjee</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Great room, lovely balcony, comfy bed, clean bathroom. Waking up to the view from the balcony made our morning coffee routine absolute perfection during our holiday."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 5 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">SJ</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Sherjeel T.</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Bathroom was okay. Breakfast was very simple but good. Staff incredibly friendly and welcoming from the moment we checked in until our departure day."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 6 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">AM</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Anna Miller</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"An absolute hidden gem in Ubud! The aesthetic of the rooms and the peaceful courtyard provide a true sanctuary feel away from the bustling streets."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 7 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">JD</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Julian Dubois</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Cleanliness is top-notch, and the high-speed Wi-Fi worked flawlessly for my remote work meetings. Will definitely recommend this property to colleagues."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 8 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">KL</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Kirsty Larson</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"The bed was extremely comfortable, plush pillows, and fresh linens everyday. Perfect place to rest after a long day of exploring temples and waterfalls."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 9 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">MR</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Marco Rossi</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Very quiet at night despite being close to the center. The ambiance of the garden area with soothing lighting makes it very relaxing in the evening."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 10 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">HS</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Hannah Schmidt</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Value for money is unmatched. You get premium boutique styling, modern facilities, and an authentic Balinese experience at a very reasonable price."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 11 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">NK</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Naomi Kawasumi</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"The room decor is minimalist yet charming with traditional touches. Impeccable cleanliness and friendly personnel who remember your name!"</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 12 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">PT</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Paul Taylor</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Great strategic starting point for walks like the Campuhan Ridge Walk. Returning to Ubud Backyard after a long hike feels genuinely refreshing."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 13 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">EL</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Emma Lindqvist</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Loved the organic styling and open feeling of the property. The air conditioning works wonderfully and keeps the room cool throughout tropical nights."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 14 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">DK</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Daniel Kowalski</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Exceptional hospitality! The management accommodated our late-night arrival smoothly and provided fantastic dining tips around the neighborhood."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 15 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">CS</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Chloe Smith</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Everything was pristine and well-maintained. The atmosphere is peaceful, making it a dream location for reading books or journaling on the patio."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 16 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">FB</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Lucas Bernard</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Great location within easy walking distance to famous local cafes and cultural spots. The environment feels safe and private."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 17 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">SO</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Soren Olesen</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Impressed by how quiet the rooms are considering how central the property is situated. Truly a sanctuary designed for absolute relaxation."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 18 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">AM</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Aisha Morales</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"The design details are gorgeous. Every corner is photogenic, and the room had all the necessary amenities for a cozy, stress-free getaway."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 19 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">TK</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Tom Keller</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Friendly staff, clean facilities, and a wonderful location. Easy to rent a scooter right nearby or book transport for day trips around Bali."</p>
+                        </div>
+                    </div>
+                    <!-- Ulasan 20 -->
+                    <div class="min-w-[340px] max-w-[340px] bg-warmIvory p-6 rounded-2xl border border-accentGold/20 flex flex-col justify-between flex-shrink-0">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-[#b89768]/20 text-[#b89768] font-bold flex items-center justify-center text-sm">NV</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Nicolette Van Dijk</h4>
+                                    <span class="text-[11px] text-gray-400" data-i18n="rev_verified">Booking.com Verified Review</span>
+                                </div>
+                            </div>
+                            <div class="text-amber-500 text-xs mb-3 flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 text-xs italic leading-relaxed">"Magical atmosphere! It truly lives up to its name as a sanctuary. Will definitely be returning here on my next trip back to Bali."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri" class="py-24 px-6 max-w-7xl mx-auto border-t border-accentGold/10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-semibold tracking-[0.25em] uppercase text-accentGold mb-3 block" data-i18n="gallery_tag">Dokumentasi Visual</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-darkCharcoal mb-4" data-i18n="gallery_title">
+                Galeri Keindahan Properti
+            </h2>
+            <p class="text-gray-600 font-light text-sm" data-i18n="gallery_desc">
+                Intip suasana asri, sudut kamar yang nyaman, serta keindahan alam sekitar Ubud Backyard.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero1.jpg" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero3.jpg" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero5.jpg" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero2.jpg" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero4.jpg" alt="Gallery 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero6.jpg" alt="Gallery 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero7.jpg" alt="Gallery 7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero8.jpg" alt="Gallery 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero9.jpg" alt="Gallery 9" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero10.jpg" alt="Gallery 10" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero11.jpg" alt="Gallery 11" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="overflow-hidden rounded-2xl shadow-md h-72 group relative"><img src="asset/hero12.jpg" alt="Gallery 12" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkCharcoal text-warmIvory py-16 px-6 border-t border-accentGold/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h3 class="font-serif text-2xl font-bold uppercase tracking-wider mb-4">Ubud Backyard</h3>
+                <p class="text-warmIvory/70 text-xs font-light leading-relaxed max-w-sm" data-i18n="footer_desc">
+                    Destinasi peristirahatan tenang berbalut kemewahan simpel di jantung budaya Ubud, Bali. Pilihan tepat untuk liburan yang menenangkan jiwa.
+                </p>
+            </div>
+            <div></div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest text-accentGold mb-4" data-i18n="footer_partner_title">Reservasi & Mitra</h4>
+                <p class="text-xs text-warmIvory/70 font-light mb-4" data-i18n="footer_partner_desc">Pesan kamar Anda sekarang secara online melalui platform mitra resmi kami:</p>
+                <a href="https://www.booking.com/hotel/id/ubud-backyard.id.html" target="_blank" class="inline-block bg-accentGold hover:bg-[#b0936d] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest transition" data-i18n="cta_booking">
+                    Booking.com <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-warmIvory/50 font-light" data-i18n="footer_copy">
+            &copy; 2026 Ubud Backyard, Gg. Soka No.5, Ubud, Bali. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Scripting -->
+    <script>
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_rooms: "Rooms & Rates",
+                nav_facilities: "Facilities",
+                nav_rating: "Rating",
+                nav_gallery: "Gallery",
+                cta_booking: "Book on Booking.com",
+                hero_badge: "Luxury Sanctuary in Ubud",
+                hero_title: "Your Peaceful Retreat <br><span class=\"italic font-normal\">in the Heart of Bali</span>",
+                hero_desc: "Embrace the tranquil nature of Ubud at Gg. Soka. Offering easy access, ultimate comfort, and authentic tropical serenity.",
+                hero_btn_rooms: "View Rooms",
+                about_tag: "Property Overview",
+                about_title: "Exclusive Serenity in the Heart of Ubud",
+                about_desc: "Hidden yet strategically located at Gang Soka No.5, <strong>Ubud Backyard</strong> offers a stay experience combining traditional Balinese warmth with top-tier modern amenities. Surrounded by refreshing greenery, this property is the perfect sanctuary after a day of exploring the Monkey Forest and Ubud Traditional Market.",
+                about_stat1_num: "12 Mins",
+                about_stat1: "Walking Distance to Monkey Forest",
+                about_stat2_num: "8 Mins",
+                about_stat2: "To Ubud Traditional Market",
+                rooms_tag: "Selected Accommodation",
+                rooms_title: "Luxury Rooms & Suites",
+                rooms_desc: "Designed with simple, elegant aesthetics to provide maximum comfort during your holiday in Bali.",
+                room1_badge: "Deluxe King Room",
+                room1_title: "Deluxe King Room with Balcony",
+                room1_desc: "Spacious 25 m² room featuring a luxurious King-size bed, private balcony overlooking lush green gardens, modern bathroom, and complete amenities.",
+                room2_badge: "Double Room with Terrace",
+                room2_title: "Double Room with Terrace",
+                room2_desc: "Cozy 25 m² room equipped with a private terrace facing directly into the lush garden. Perfect for relaxing and enjoying a morning coffee in Ubud.",
+                amenity_wifi: "Free In-Room Wi-Fi",
+                amenity_coffee: "Free Tea & Coffee",
+                amenity_ac: "Air Conditioning",
+                amenity_bath: "Private Bathroom",
+                amenity_balcony: "Garden View Balcony",
+                amenity_wardrobe: "Wardrobe / Closet",
+                amenity_terrace: "Private Terrace & Lounge Chairs",
+                start_from: "Starts From",
+                per_night: "/ night",
+                btn_book: "Book Room",
+                fac_tag: "Guest Comfort",
+                fac_title: "Premium Facilities",
+                fac_desc: "Everything you need to ensure a peaceful and delightful stay experience.",
+                fac1_title: "Fast Free Wi-Fi",
+                fac1_desc: "High-speed wireless internet access available for free across all rooms and property areas.",
+                fac2_title: "Free Tea & Coffee",
+                fac2_desc: "Ready-to-use tea and coffee making facilities in every room to accompany your relaxation time.",
+                fac3_title: "Lush Peaceful Garden",
+                fac3_desc: "Tropical green garden area refreshing to the eyes and providing inner peace.",
+                fac4_title: "Air-Conditioned Rooms",
+                fac4_desc: "Quality room cooling to ensure optimal freshness after outdoor activities.",
+                rating_tag: "Guest Reviews",
+                rating_title: "Rating & Guest Satisfaction",
+                rating_desc: "Outstanding ratings and real experiences from travelers who have stayed at Ubud Backyard.",
+                score_title: "Fabulous",
+                score_subtitle: "Based on 49 Real Reviews on Booking.com",
+                read_all_reviews: "Read All Reviews on Booking.com",
+                reviews_slider_title: "Direct Experience from Our Guests",
+                rev_verified: "Booking.com Verified Review",
+                gallery_tag: "Visual Documentation",
+                gallery_title: "Property Beauty Gallery",
+                gallery_desc: "Catch a glimpse of the serene ambiance, cozy room corners, and surrounding natural beauty of Ubud Backyard.",
+                footer_desc: "A peaceful sanctuary destination wrapped in simple luxury in the cultural heart of Ubud, Bali. The right choice for a soul-soothing holiday.",
+                footer_partner_title: "Reservations & Partners",
+                footer_partner_desc: "Book your room now online through our official partner platform:",
+                footer_copy: "&copy; 2026 Ubud Backyard, Gg. Soka No.5, Ubud, Bali. All Rights Reserved."
+            },
+            id: {
+                nav_about: "Tentang",
+                nav_rooms: "Kamar & Harga",
+                nav_facilities: "Fasilitas",
+                nav_rating: "Rating",
+                nav_gallery: "Galeri",
+                cta_booking: "Pesan di Booking.com",
+                hero_badge: "Luxury Sanctuary in Ubud",
+                hero_title: "Your Peaceful Retreat <br><span class=\"italic font-normal\">in the Heart of Bali</span>",
+                hero_desc: "Menyatu dengan ketenangan alam Ubud di Gg. Soka. Menghadirkan kemudahan akses, kenyamanan paripurna, dan keasrian tropis yang autentik.",
+                hero_btn_rooms: "Lihat Pilihan Kamar",
+                about_tag: "Tentang Properti",
+                about_title: "Ketenangan Eksklusif di Jantung Ubud",
+                about_desc: "Terletak tersembunyi namun strategis di Gang Soka No.5, <strong>Ubud Backyard</strong> menawarkan pengalaman menginap yang menggabungkan kehangatan nuansa tradisional Bali dengan fasilitas modern kelas atas. Dikelilingi kehijauan yang menyegarkan, properti ini adalah tempat peristirahatan sempurna setelah seharian menjelajahi keindahan Monkey Forest dan Pasar Ubud.",
+                about_stat1_num: "12 Menit",
+                about_stat1: "Jalan Kaki ke Monkey Forest",
+                about_stat2_num: "8 Menit",
+                about_stat2: "Ke Pasar Tradisional Ubud",
+                rooms_tag: "Akomodasi Pilihan",
+                rooms_title: "Kamar & Suite Mewah",
+                rooms_desc: "Dirancang dengan estetika simpel elegan, memberikan kenyamanan maksimal selama Anda berlibur di Bali.",
+                room1_badge: "Deluxe King Room",
+                room1_title: "Deluxe King Room with Balcony",
+                room1_desc: "Kamar luas berukuran 25 m² dengan tempat tidur ukuran King yang mewah, balkon pribadi menghadap ke hamparan taman hijau, kamar mandi modern, serta fasilitas lengkap.",
+                room2_badge: "Double Room with Terrace",
+                room2_title: "Double Room with Terrace",
+                room2_desc: "Kamar cozy berukuran 25 m² yang dilengkapi teras pribadi langsung menghadap ke kebun asri. Sempurna untuk bersantai menikmati pagi hari di Ubud sambil menyeruput kopi hangat.",
+                amenity_wifi: "Wi-Fi Gratis di Kamar",
+                amenity_coffee: "Teh & Kopi Gratis",
+                amenity_ac: "AC (Air Conditioning)",
+                amenity_bath: "Kamar Mandi Pribadi",
+                amenity_balcony: "Balkon Pemandangan Taman",
+                amenity_wardrobe: "Lemari Pakaian",
+                amenity_terrace: "Teras Pribadi & Kursi Santai",
+                start_from: "Mulai Dari",
+                per_night: "/malam",
+                btn_book: "Pesan Kamar",
+                fac_tag: "Kenyamanan Tamu",
+                fac_title: "Fasilitas Premium",
+                fac_desc: "Segala hal yang Anda butuhkan untuk memastikan pengalaman menginap yang tenang dan menyenangkan.",
+                fac1_title: "Wi-Fi Cepat Gratis",
+                fac1_desc: "Akses internet nirkabel berkecepatan tinggi gratis di seluruh area kamar dan properti.",
+                fac2_title: "Teh & Kopi Gratis",
+                fac2_desc: "Fasilitas pembuat teh dan kopi siap pakai di setiap kamar untuk menemani waktu santai Anda.",
+                fac3_title: "Taman Asri & Tenang",
+                fac3_desc: "Area taman hijau tropis yang menyejukkan pandangan dan memberikan ketenangan jiwa.",
+                fac4_title: "Kamar Ber-AC",
+                fac4_desc: "Pendingin ruangan berkualitas untuk memastikan kesejukan optimal setelah beraktivitas di luar.",
+                rating_tag: "Ulasan Tamu",
+                rating_title: "Rating & Kepuasan Tamu",
+                rating_desc: "Penilaian luar biasa dan pengalaman nyata dari para pelancong yang telah menginap di Ubud Backyard.",
+                score_title: "Luar Biasa",
+                score_subtitle: "Berdasarkan 49 Ulasan Nyata di Booking.com",
+                read_all_reviews: "Lihat Semua Ulasan di Booking.com",
+                reviews_slider_title: "Pengalaman Langsung Tamu Kami",
+                rev_verified: "Booking.com Verified Review",
+                gallery_tag: "Dokumentasi Visual",
+                gallery_title: "Galeri Keindahan Properti",
+                gallery_desc: "Intip suasana asri, sudut kamar yang nyaman, serta keindahan alam sekitar Ubud Backyard.",
+                footer_desc: "Destinasi peristirahatan tenang berbalut kemewahan simpel di jantung budaya Ubud, Bali. Pilihan tepat untuk liburan yang menenangkan jiwa.",
+                footer_partner_title: "Reservasi & Mitra",
+                footer_partner_desc: "Pesan kamar Anda sekarang secara online melalui platform mitra resmi kami:",
+                footer_copy: "&copy; 2026 Ubud Backyard, Gg. Soka No.5, Ubud, Bali. All Rights Reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            const enBtns = [document.getElementById('lang-en-btn'), document.getElementById('lang-en-m-btn')];
+            const idBtns = [document.getElementById('lang-id-btn'), document.getElementById('lang-id-m-btn')];
+
+            if (lang === 'en') {
+                enBtns.forEach(btn => { if(btn) btn.className = "px-3 py-1.5 px-2 py-1 rounded-full transition bg-white text-[#b89768]"; });
+                idBtns.forEach(btn => { if(btn) btn.className = "px-3 py-1.5 px-2 py-1 rounded-full transition text-white hover:text-[#332515]"; });
+            } else {
+                idBtns.forEach(btn => { if(btn) btn.className = "px-3 py-1.5 px-2 py-1 rounded-full transition bg-white text-[#b89768]"; });
+                enBtns.forEach(btn => { if(btn) btn.className = "px-3 py-1.5 px-2 py-1 rounded-full transition text-white hover:text-[#332515]"; });
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Set default language to English when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setLanguage('en');
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero Slider Logic
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                indicators[i].classList.remove('bg-white', 'scale-125');
+                indicators[i].classList.add('bg-white/50');
+            });
+            slides[index].classList.add('active');
+            indicators[index].classList.remove('bg-white/50');
+            indicators[index].classList.add('bg-white', 'scale-125');
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Reviews Slider Navigation
+        function slideReviews(direction) {
+            const container = document.getElementById('reviewSlider');
+            const scrollAmount = 364; 
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
